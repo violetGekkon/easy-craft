@@ -1,10 +1,3 @@
-[
-  {
-    "remoteEntry": "http://localhost:4201/remoteEntry.js",
-    "remoteName": "ec-main",
-    "exposedModule": "./route",
-    "displayName": "Home",
-    "routePath": "main",
-    "ngModuleName": "MAIN_ROUTES"
-  }
-]
+{
+  "cabinet" : "http://localhost:4201/remoteEntry.json"
+}
