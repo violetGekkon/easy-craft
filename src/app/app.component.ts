@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {EcLayoutComponent} from "@easy-craft/layout";
 
 @Component({
   selector: 'ec-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, EcLayoutComponent],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
+    <ec-layout></ec-layout>
   `,
   styles: [],
 })
