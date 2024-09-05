@@ -1,6 +1,7 @@
 import {loadRemoteModule} from '@angular-architects/native-federation';
 import {Routes} from "@angular/router";
 import {Manifest, MicrofrontendConfig} from "./config";
+import {NotFoundComponent} from "../404/404.component";
 
 export function buildApplicationRoutes(options: Manifest): Routes {
 
@@ -12,7 +13,7 @@ export function buildApplicationRoutes(options: Manifest): Routes {
         // loadComponent: () =>
         //   loadRemoteModule(key, './Component').then((m) => m.AppComponent),
         loadChildren: () =>
-          loadRemoteModule(key, './routes').then((m) => m.MAIN_ROUTES),
+          loadRemoteModule(key, './routes').then((m) => m.MFE_ROUTES),
     }
     )
   }
@@ -37,9 +38,10 @@ export function buildApplicationRoutes(options: Manifest): Routes {
 
   return [
     ...routes,
+    {path: '404', component: NotFoundComponent},
     {
       path: '',
-      redirectTo: 'cabinet',
+      redirectTo: 'test',
       pathMatch: 'full',
     },
     {

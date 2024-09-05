@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 import {EcLayoutComponent} from "@easy-craft/layout";
 
 @Component({
@@ -12,5 +12,5 @@ import {EcLayoutComponent} from "@easy-craft/layout";
   styles: [],
 })
 export class AppComponent {
-  title = 'easy-craft';
+
 }
