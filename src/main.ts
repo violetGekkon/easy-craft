@@ -1,7 +1,11 @@
 import { initFederation } from '@angular-architects/native-federation';
+import {fetchManifest} from "./app/utils/init";
 
-initFederation('/assets/federation.manifest.json')
-  .then(() => console.log('Federation loaded'))
-  .catch(err => console.error('error from shell main.ts ', err))
+
+fetchManifest().then(m =>
+  initFederation(m)
+  .catch(err => console.error(err))
   .then(_ => import('./bootstrap'))
-  .catch(err => console.error(err));
+  .catch(err => console.error(err)))
+
+
