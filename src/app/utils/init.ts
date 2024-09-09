@@ -8,7 +8,7 @@ export async function fetchManifest(): Promise<any> {
     if (!response.ok) {
       if (response.status === 401) {
         // Если 401, выполняем редирект на SSO
-        const redirectUrl = window.location.href;
+        const redirectUrl = window.location.origin;
         window.location.href = `${bffUrl}/login?redirect_uri=${encodeURIComponent(redirectUrl)}`;
       } else {
         throw new Error(`Failed to fetch manifest: ${response.statusText}`);
