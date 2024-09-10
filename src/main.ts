@@ -1,4 +1,4 @@
-import { initFederation } from '@angular-architects/native-federation';
+import {initFederation} from '@angular-architects/native-federation';
 import {fetchManifest} from "./app/utils/init";
 import {Manifest, MfConfig} from "./app/utils/config";
 
@@ -19,10 +19,10 @@ fetchManifest()
 
     return manifest;
   })
-  .then(m =>
-  initFederation(m)
-  .catch(err => console.error(err))
-  .then(_ => import('./bootstrap'))
-  .catch(err => console.error(err)))
+  .then(m => initFederation(m)
+    .catch(err => console.error(err))
+    .then(_ => import('./bootstrap'))
+    .catch(err => console.error(err))
+  )
 
 

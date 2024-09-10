@@ -3,7 +3,7 @@ import {Routes} from "@angular/router";
 import {MfConfig} from "./config";
 import {NotFoundComponent} from "../404/404.component";
 
-export function buildApplicationRoutes(options: MfConfig[]): Routes {
+export function routes(options: MfConfig[]): Routes {
 
   const lazyRoutes: Routes = Array.from(options).map(o => ({
     path: o.routePath,

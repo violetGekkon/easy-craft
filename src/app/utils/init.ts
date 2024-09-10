@@ -1,5 +1,5 @@
 export async function fetchManifest(): Promise<any> {
-  const bffUrl = `${window.location.origin}/api/bff`
+  const bffUrl = `${window.location.origin}/gateway/api/bff`
   try {
     const response = await fetch(`${bffUrl}/manifest`, {
       credentials: 'include',
@@ -8,13 +8,13 @@ export async function fetchManifest(): Promise<any> {
     if (!response.ok) {
       if (response.status === 401) {
         // Если 401, выполняем редирект на SSO
-        const redirectUrl = window.location.origin;
-        window.location.href = `${bffUrl}/login?redirect_uri=${encodeURIComponent(redirectUrl)}`;
+        const locationHref = window.location.origin;
+        window.location.href = `${locationHref}/oauth2/authorization/oidc-client`;
       } else {
         throw new Error(`Failed to fetch manifest: ${response.statusText}`);
       }
     }
-    // Возвращаем результат, если запрос успешен
+
     return await response.json();
 
   } catch (error) {
